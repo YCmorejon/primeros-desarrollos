@@ -1,3 +1,5 @@
+#Web Guide es un bot de Telegram que te ayuda a aprender sobre la web 3.0
+
 # WebGuide
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
