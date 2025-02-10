@@ -2,7 +2,7 @@ import requests
 import json
 
 """
-Funciones mejoradas
+Funciones 
 """
 
 # Función para abrir el JSON donde están los ID de las ciudades
@@ -22,7 +22,7 @@ def pedir_usuario():
             id_city = data[name_city]
             # Params
             params = {
-                "apikey": "40e1f76b7c5b139f76577de46aad8d41",
+                "apikey": "APY_KEY",
                 "id": id_city
             }
             peticion_get(params)
