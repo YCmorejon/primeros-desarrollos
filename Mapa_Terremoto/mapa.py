@@ -39,8 +39,8 @@ def icon_color_por_magnitud(magnitud):
         return "blue"
 
 # Capa base
-fg_circle = folium.FeatureGroup(name="Terremotos (CircleMarker)")
-fg_marker = folium.FeatureGroup(name="Terremotos (Marker)")
+fg_circle = folium.FeatureGroup(name="Terremotos (CircleMarker)", show=True)  # Mostrar esta capa por defecto
+fg_marker = folium.FeatureGroup(name="Terremotos (Marker)", show=False)  # No mostrar esta capa por defecto
 
 # Crear marcadores de círculo
 for mag, tim, dett, lon, lat in zip(Magnitud, Tiempo, Detalles, Longitud, Latitud):
