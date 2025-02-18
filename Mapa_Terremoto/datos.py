@@ -39,6 +39,6 @@ except requests.exceptions.RequestException as e:
 except KeyError as e:
     print(f"Error: La clave {e} no existe en el JSON.")
 except ValueError as e:
-    print(f"Error: Valor inválido en los datos (por ejemplo, tiempo no válido).")
+    print(f"Error: Valor inválido en los datos (por ejemplo, tiempo no válido).{e}")
 except Exception as e:
     print(f"Error inesperado: {e}")
