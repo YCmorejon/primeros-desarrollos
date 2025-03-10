@@ -1,1 +1,118 @@
-"Pronto información de WebGuide"
+# 🤖 WebGuide - Tu Asistente de Web 3.0 en Telegram
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)](https://python.org)
+[![Telegram](https://img.shields.io/badge/Telegram-Bot-2CA5E0?logo=telegram&logoColor=white)](https://t.me/TuBotWebGuide)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+
+WebGuide es un bot de Telegram diseñado para educar y asistir a usuarios en el aprendizaje sobre Web 3.0, criptomonedas y tecnologías descentralizadas. Ofrece información actualizada, precios de criptoactivos y un sistema interactivo de aprendizaje.
+
+![Demo del Bot](assets/demo.gif) <!-- Reemplazar con tu GIF/Screenshot -->
+
+## 🚀 Características Principales
+
+- 💡 **Guía Educativa de Web 3.0**: Conceptos fundamentales y tecnologías clave
+- 📊 **Seguimiento de Criptomonedas**: Precios en tiempo real de los principales activos digitales
+- ⏰ **Sistema de Notificaciones**: Alertas personalizadas para sesiones de aprendizaje
+- 🧩 **Interfaz Interactiva**: Menús con botones para navegación intuitiva
+- 🔄 **Integración con APIs**: Datos actualizados desde CoinGecko
+
+## 🛠️ Configuración Rápida
+
+### Requisitos Previos
+- Python 3.10+
+- Cuenta de Telegram
+- [Token de Bot de Telegram](https://core.telegram.org/bots#how-do-i-create-a-bot)
+
+### Instalación
+```bash
+# Clonar repositorio
+git clone https://github.com/YCmorejon/primeros-desarrollos.git
+cd primeros-desarrollos/WebGuide
+
+# Instalar dependencias
+pip install -r requirements.txt
+
+# Configurar entorno
+cp config.example.py config.py
+# Editar config.py con tu API_KEY de Telegram
+```
+
+### Uso
+```bash
+python bot.py
+```
+
+## 📋 Comandos Disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `/start` | Mensaje de bienvenida |
+| `/help` | Lista de comandos disponibles |
+| `/price` | Precios actuales de criptomonedas |
+| `/learn` | Menú interactivo de aprendizaje |
+| `/notifications` | Configurar alertas de aprendizaje |
+
+## 🧠 Módulo de Aprendizaje Interactivo
+El bot incluye 9 categorías educativas con información detallada sobre:
+- Fundamentos de Web 3.0
+- Tecnologías Blockchain
+- Privacidad y Seguridad
+- Mercado de Criptomonedas
+- Impacto de la IA
+
+## 🌐 Integración con APIs
+- **CoinGecko API**: Obtención de precios en tiempo real
+```python
+def precios_criptomonedas():
+    url = 'https://api.coingecko.com/api/v3/simple/price'
+    parametros = {
+        'ids': 'bitcoin,ethereum,binancecoin...',
+        'vs_currencies': 'usd'
+    }
+    # Implementación completa en el código
+```
+
+## 🛡️ Manejo de Contenido
+El bot incluye protección contra:
+- Archivos adjuntos no soportados
+- Comandos no reconocidos
+- Formatos de tiempo inválidos
+
+## 📚 Stack Tecnológico
+- **Lenguaje Principal**: Python 3.10
+- **Bibliotecas Principales**:
+  - `python-telegram-bot`: Interacción con la API de Telegram
+  - `requests`: Manejo de solicitudes HTTP
+  - `asyncio`: Programación asíncrona
+  - `re`: Expresiones regulares
+
+## 🤝 Cómo Contribuir
+1. Haz fork del proyecto
+2. Crea tu rama (`git checkout -b feature/nueva-funcionalidad`)
+3. Haz commit de tus cambios (`git commit -m 'Agregar nueva funcionalidad'`)
+4. Haz push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. Abre un Pull Request
+
+## 📄 Licencia
+Este proyecto está bajo la licencia MIT - ver [LICENSE](LICENSE) para más detalles.
+
+---
+
+[![LinkedIn](https://img.shields.io/badge/Conectemos_en_LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/tu-perfil)
+[![Soporte](https://img.shields.io/badge/Reportar_Issue-FF6F61?style=for-the-badge)](https://github.com/YCmorejon/primeros-desarrollos/issues)
+```
+
+Este README incluye:
+1. Badges profesionales para visualización rápida de tecnologías
+2. Sección de configuración clara con comandos exactos
+3. Tablas organizadas para comandos y características
+4. Fragmentos de código relevantes
+5. Sección de contribución estandarizada
+6. Enlaces de contacto y soporte
+7. Espacio para demo visual (reemplazar con tu GIF/screenshots)
+
+Para mejorarlo aún más:
+1. Graba un GIF corto mostrando la interacción con el bot
+2. Agrega capturas de pantalla en la carpeta `assets/`
+3. Personaliza los enlaces de contacto y licencia
+4. Agrega una sección de "Roadmap" con planes futuros
