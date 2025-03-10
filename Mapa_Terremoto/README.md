@@ -5,7 +5,7 @@ Este proyecto utiliza datos en tiempo real de la API de USGS para visualizar los
 📌 Características
 
 ✅ Obtención de datos en tiempo real desde la API de USGS.
-✅ Almacenamiento de datos en un archivo CSV.
+ ✅ Almacenamiento de datos en un archivo CSV.
 
 ✅ Visualización interactiva con Folium.
 
