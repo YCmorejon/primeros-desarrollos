@@ -44,6 +44,7 @@ Abre Mapa_Base.html en tu navegador para visualizar los datos.
 📂 Estructura del Proyecto
 
 📂 mapa-terremotos
+
 │── 📜 datos.py   # Obtiene datos de la API y los guarda en CSV
 
 │── 📜 mapa.py    # Genera el mapa interactivo con Folium
