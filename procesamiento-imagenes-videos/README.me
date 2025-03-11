@@ -1,1 +1,106 @@
-a
+# 🎥 Sistema de Detección de Movimiento con OpenCV
+
+Sistema de vigilancia inteligente que detecta movimiento en tiempo real usando la cámara web, registrando los intervalos de actividad en un archivo CSV.
+
+---
+
+## 🚀 Características Clave
+
+### 🕵️ Detección Precisa
+- **Fondo Adaptativo**: Usa el primer frame como referencia para detectar cambios
+- **Filtrado de Ruido**: Aplicación de desenfoque gaussiano
+- **Umbralización Óptima**: Método de Otsu para binarización automática
+- **Detección de Contornos**: Identifica objetos en movimiento con área > 1000 píxeles
+
+### 📊 Registro de Actividad
+- **CSV Automatizado**: Guarda tiempos de inicio/fin de cada evento
+- **Marcado Visual**: Rectángulos verdes alrededor de objetos en movimiento
+- **Interfaz Limpia**: Muestra solo el panel principal con detecciones
+
+---
+
+## 🛠️ Instalación y Uso
+
+### Requisitos Previos
+- Python 3.10+
+- Cámara web funcional
+
+### Instalación
+```bash
+# Clonar repositorio
+git clone https://github.com/YCmorejon/primeros-desarrollos.git
+cd primeros-desarrollos/procesamiento-imagenes-videos
+
+# Instalar dependencias
+pip install -r requirements.txt
+```
+
+### Ejecución
+```bash
+python webcam.py
+```
+
+### Comandos
+- **Presiona 'q'**: Detener la ejecución y guardar datos
+- **Ventana Principal**: Muestra detecciones en tiempo real
+
+---
+
+```
+
+### Ejemplo de Implementación
+```python
+# Detección de movimiento
+delta_frame = cv2.absdiff(first_frame, gray)
+_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+for contour in contours:
+    if cv2.contourArea(contour) < 1000:
+        continue
+    (x, y, w, h) = cv2.boundingRect(contour)
+    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 3)
+```
+
+---
+
+## 📊 Salida de Datos
+El sistema genera un archivo `Times.csv` con:
+- **Start**: Hora de inicio de movimiento
+- **End**: Hora de fin de movimiento
+
+Ejemplo:
+| Start               | End                 |
+|---------------------|---------------------|
+| 2024-03-09 14:23:01 | 2024-03-09 14:23:05 |
+| 2024-03-09 14:25:10 | 2024-03-09 14:25:15 |
+
+---
+
+## 🛠️ Tecnologías Usadas
+- **OpenCV**: Procesamiento de imágenes y video
+- **Pandas**: Manejo de datos temporales
+- **NumPy**: Operaciones matriciales (tras bambalinas en OpenCV)
+
+---
+
+## 🤝 Cómo Contribuir
+1. Reporta fallos o sugerencias en [Issues](https://github.com/YCmorejon/primeros-desarrollos/issues)
+2. Haz fork del proyecto
+3. Crea una rama con tu feature (`git checkout -b feature/nueva-funcionalidad`)
+4. Haz commit de tus cambios (`git commit -m 'feat: nueva funcionalidad'`)
+5. Haz push a la rama (`git push origin feature/nueva-funcionalidad`)
+6. Abre un Pull Request
+
+---
+
+[![Soporte Técnico](https://img.shields.io/badge/Reportar_Problema-FF6F61?style=for-the-badge)](https://github.com/YCmorejon/primeros-desarrollos/issues)
+[![Documentación](https://img.shields.io/badge/Ver_Docs-4285F4?style=for-the-badge)](https://github.com/YCmorejon/primeros-desarrollos/wiki)
+```
+
+### Características Clave:
+1. **Diagrama de Flujo Mermaid**: Explica visualmente el proceso de detección
+2. **Ejemplo de Implementación**: Muestra fragmentos clave del código
+3. **Salida de Datos**: Ejemplo claro del CSV generado
+4. **Roadmap Interactivo**: Con checkboxes para progreso visual
+5. **Badges Profesionales**: Con enlaces a tecnologías clave
