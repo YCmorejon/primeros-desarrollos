@@ -14,65 +14,69 @@ headers = {
 }
 
 # Enlace de la web a extraer info
-url = "https://pythonizing.github.io/data/real-estate/rock-springs-wy/LCWYROCKSPRINGS/"
-
-# Realizando petición get con encabezados
-respuesta = requests.get(url, headers=headers)
-
-# Contenido de la web
-contenido = respuesta.content
-
-# Creando sopa
-sopa = BeautifulSoup(contenido, "html.parser")
-
-# Buscando los divs
-busqueda = sopa.find_all("div", {"class": "propertyRow"})
+url = "https://pythonizing.github.io/data/real-estate/rock-springs-wy/LCWYROCKSPRINGS/t=0&s="
 
 # Lista para almacenar los diccionarios
 lista = []
-for propiedad in busqueda:
-    datos = {}
-    datos["Precio"] = propiedad.find("h4", {"class": "propPrice"}).text.replace("\n", "").replace(" ", "")
-    
-    # Direcciones
-    direcciones = propiedad.find_all("span", {"class": "propAddressCollapse"})
-    datos["Dirección"] = direcciones[0].text
-    datos["Localidad"] = direcciones[1].text if len(direcciones) > 1 else None
-    
-    # Cantidad de camas
-    try:
-        datos["Camas"] = propiedad.find("span", {"class": "infoBed"}).find("b").text
-    except:
-        datos["Camas"] = None
+
+#Recorriendo todos los resultados de busqueda
+for page in range(0,30,10):
+    # Realizando petición get con encabezados
+    respuesta = requests.get(url + str(page) + ".html", headers=headers)
+
+    # Contenido de la web
+    contenido = respuesta.content
+
+    # Creando sopa
+    sopa = BeautifulSoup(contenido, "html.parser")
+
+    # Buscando los divs
+    busqueda = sopa.find_all("div", {"class": "propertyRow"})
+
+    for propiedad in busqueda:
+        datos = {}
+        datos["Precio"] = propiedad.find("h4", {"class": "propPrice"}).text.replace("\n", "").replace(" ", "")
         
-    # Cantidad de baños
-    try:
-        datos["Baños Completos"] = propiedad.find("span", {"class": "infoValueFullBath"}).find("b").text
-    except:
-        datos["Baños Completos"] = None
-    
-    # Metros cuadrados   
-    try:
-        datos["Área"] = propiedad.find("span", {"class": "infoSqFt"}).find("b").text
-    except:
-        datos["Área"] = None
+        # Direcciones
+        direcciones = propiedad.find_all("span", {"class": "propAddressCollapse"})
+        datos["Dirección"] = direcciones[0].text
+        datos["Localidad"] = direcciones[1].text if len(direcciones) > 1 else None
         
-    # Baños medios   
-    try:
-        datos["Medios Baños"] = propiedad.find("span", {"class": "infoValueHalfBath"}).find("b").text
-    except:
-        datos["Medios Baños"] = None
+        # Cantidad de camas
+        try:
+            datos["Camas"] = propiedad.find("span", {"class": "infoBed"}).find("b").text
+        except:
+            datos["Camas"] = None
+            
+        # Cantidad de baños
+        try:
+            datos["Baños Completos"] = propiedad.find("span", {"class": "infoValueFullBath"}).find("b").text
+        except:
+            datos["Baños Completos"] = None
         
-    # Buscando tamaño del lote
-    for tamaño in propiedad.find_all("div", {"class": "columnGroup"}):
-        for grupo_caracteristicas, nombre_caracteristica in zip(tamaño.find_all("span", {"class": "featureGroup"}), tamaño.find_all("span", {"class": "featureName"})):
-            if "Lot Size" in grupo_caracteristicas.text:
-                datos["Tamaño del Lote"] = nombre_caracteristica.text
-    
-    lista.append(datos)
+        # Metros cuadrados   
+        try:
+            datos["Área"] = propiedad.find("span", {"class": "infoSqFt"}).find("b").text
+        except:
+            datos["Área"] = None
+            
+        # Baños medios   
+        try:
+            datos["Medios Baños"] = propiedad.find("span", {"class": "infoValueHalfBath"}).find("b").text
+        except:
+            datos["Medios Baños"] = None
+            
+        # Buscando tamaño del lote
+        for tamaño in propiedad.find_all("div", {"class": "columnGroup"}):
+            for grupo_caracteristicas, nombre_caracteristica in zip(tamaño.find_all("span", {"class": "featureGroup"}), tamaño.find_all("span", {"class": "featureName"})):
+                if "Lot Size" in grupo_caracteristicas.text:
+                    datos["Tamaño del Lote"] = nombre_caracteristica.text
+                
+        
+        lista.append(datos)
 
 # Convirtiendo la lista en un Data Frame
 df = pd.DataFrame(lista)
 
-#Mostrando Data 
-df
+#Llevar el Data Frame a un csv
+df.to_csv("datos_propiedad.csv")
