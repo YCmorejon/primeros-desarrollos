@@ -1,7 +1,6 @@
 # 🏠 RealEstateScraper - Analizador de Mercado Inmobiliario
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
-[![Licencia](https://img.shields.io/badge/Licencia-MIT-green)](LICENSE)
 [![Dependencias](https://img.shields.io/badge/Dependencias-Requests%20%7C%20BeautifulSoup%20%7C%20Pandas-orange)](requirements.txt)
 
 Herramienta automatizada para extracción y análisis de datos inmobiliarios en tiempo real.
