@@ -20,7 +20,7 @@ Este proyecto utiliza datos en tiempo real de la API de USGS para visualizar los
 
 1️-Clonar el Repositorio
 
-git clone https://github.com/tu-usuario/mapa-terremotos.git
+git clone https://github.com/ycmorejon/mapa-terremotos.git
 cd mapa-terremotos
 
 2️-Instalar Dependencias
