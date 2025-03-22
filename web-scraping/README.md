@@ -7,7 +7,6 @@
 Herramienta automatizada para extracción y análisis de datos inmobiliarios en tiempo real.
 
 ![Dashboard de Datos Inmobiliarios](https://via.placeholder.com/800x400.png/2E5A88/FFFFFF?text=Dashboard+de+Propiedades+%7C+Visualizaci%C3%B3n+de+Datos+%7C+An%C3%A1lisis+de+Mercado)
-*(Reemplazar con imagen real del proyecto)*
 
 ## 📌 Descripción del Proyecto
 Sistema de scraping avanzado que recopila y organiza información clave de propiedades en venta, permitiendo:
@@ -79,14 +78,4 @@ Distribuido bajo licencia MIT. Ver `LICENSE` para más detalles.
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Parsing HTML/XML
 - [Pandas](https://pandas.pydata.org/) - Manipulación de datos
 - [Requests](https://requests.readthedocs.io/) - Cliente HTTP
-
-
-**Pasos para personalizar:**
-1. Reemplaza `YCmorejon` por tu usuario de GitHub
-2. Agrega imágenes reales del proyecto en:
-   - `docs/screenshots/dashboard.png`
-   - `docs/screenshots/data_sample.png`
-3. Modifica la tabla de datos con ejemplos reales de tu CSV
-4. Añade una sección de "Roadmap" si tienes planes futuros
-
 ```
