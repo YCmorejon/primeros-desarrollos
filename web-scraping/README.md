@@ -1,4 +1,3 @@
-```markdown
 # 🏠 RealEstateScraper - Analizador de Mercado Inmobiliario
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
@@ -80,7 +79,7 @@ Distribuido bajo licencia MIT. Ver `LICENSE` para más detalles.
 - [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Parsing HTML/XML
 - [Pandas](https://pandas.pydata.org/) - Manipulación de datos
 - [Requests](https://requests.readthedocs.io/) - Cliente HTTP
-```
+
 
 **Pasos para personalizar:**
 1. Reemplaza `YCmorejon` por tu usuario de GitHub
