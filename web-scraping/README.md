@@ -8,9 +8,7 @@ Herramienta automatizada para extracción y análisis de datos inmobiliarios en 
 <img 
   src="https://raw.githubusercontent.com/YCmorejon/primeros-desarrollos/main/docs/images/analizador_propiedades.jpeg" 
   alt="Dashboard de Datos Inmobiliarios" 
-  width="1000"
-  heigth="100"
-  style="display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+  style="max-width: 100%; height: auto;";"
 />
 
 ## 📌 Descripción del Proyecto
