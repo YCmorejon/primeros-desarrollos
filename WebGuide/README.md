@@ -1,4 +1,3 @@
-```markdown
 # 🤖 WebGuide - Tu Asistente de Web 3.0 en Telegram
 
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
@@ -155,5 +154,4 @@ git checkout -b feature/nueva-funcionalidad
 
 ---
 
-_¿Preguntas o sugerencias? ¡Abre un [issue](https://github.com/YCmorejon/primeros-desarrollos/issues) o contáctame en [LinkedIn](https://linkedin.com/in/tuperfil)!_
-```
+_¿Preguntas o sugerencias? ¡Abre un [issue](https://github.com/YCmorejon/primeros-desarrollos/issues) o contáctame en [LinkedIn](https://linkedin.com/in/ycmorejon)!_
