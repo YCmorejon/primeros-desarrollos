@@ -151,7 +151,3 @@ git checkout -b feature/nueva-funcionalidad
 - Tests actualizados
 
 **¡Las contribuciones son bienvenidas!** 🚀
-
----
-
-_¿Preguntas o sugerencias? ¡Abre un [issue](https://github.com/YCmorejon/primeros-desarrollos/issues) o contáctame en [LinkedIn](https://linkedin.com/in/ycmorejon)!_
