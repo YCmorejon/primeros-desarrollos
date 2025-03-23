@@ -5,7 +5,12 @@
 
 Herramienta automatizada para extracción y análisis de datos inmobiliarios en tiempo real.
 
-![Dashboard de Datos Inmobiliarios](https://github.com/YCmorejon/primeros-desarrollos/blob/main/docs/images/analizador_propiedades.jpeg)
+<img 
+  src="https://raw.githubusercontent.com/YCmorejon/primeros-desarrollos/main/docs/images/analizador_propiedades.jpeg" 
+  alt="Dashboard de Datos Inmobiliarios" 
+  width="600"
+  style="display: block; margin: 0 auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"
+/>
 
 ## 📌 Descripción del Proyecto
 Sistema de scraping avanzado que recopila y organiza información clave de propiedades en venta, permitiendo:
