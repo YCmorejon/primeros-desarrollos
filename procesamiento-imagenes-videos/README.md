@@ -1,114 +1,98 @@
-🎥 Sistema de Detección de Movimiento con OpenCV
+# 🎥 Sistema de Detección de Movimiento con OpenCV
 
-Sistema de vigilancia inteligente que detecta movimiento en tiempo real usando la cámara web, registrando los intervalos de actividad en un archivo CSV.
-
----
-
-📌 Características
-
-✅ Detección Precisa:  
-   -Fondo Adaptativo: Usa el primer frame como referencia para detectar cambios.  
-   -Filtrado de Ruido: Aplicación de desenfoque gaussiano.  
-   -Umbralización Óptima: Método de Otsu para binarización automática.  
-   - **Detección de Contornos**: Identifica objetos en movimiento con área > 1000 píxeles.  
-
-✅ Registro de Actividad:  
-   -CSV Automatizado: Guarda tiempos de inicio/fin de cada evento.  
-   -Marcado Visual: Rectángulos verdes alrededor de objetos en movimiento.  
-   -Interfaz Limpia: Muestra solo el panel principal con detecciones.  
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-4.8.0-5C3EE8?logo=opencv&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-2.0.3-150458?logo=pandas&logoColor=white)
 
 ---
 
-🛠️ Instalación y Uso
+## 🌟 Características Principales
 
-1. Clonar el Repositorio
+✅ **Detección Precisa**  
+- Fondo adaptativo con actualización dinámica  
+- Filtrado de ruido mediante desenfoque gaussiano  
+- Umbralización automática con método de Otsu  
+- Detección de contornos con área mínima configurable  
+
+✅ **Registro de Actividad**  
+- CSV estructurado con timestamps precisos  
+- Marcado visual con rectángulos en tiempo real  
+- Interfaz minimalista centrada en la detección  
+
+✅ **Configuración Flexible**  
+- Sensibilidad ajustable (área mínima de detección)  
+- Soporte para múltiples fuentes de video  
+- Exportación de datos en formatos estándar  
+
+---
+
+## 🚀 Instalación Rápida
+
+### Requisitos Previos
+- Python 3.10+
+- Cámara web funcional
+
 ```bash
+# Clonar repositorio
 git clone https://github.com/YCmorejon/primeros-desarrollos.git
 cd primeros-desarrollos/procesamiento-imagenes-videos
-```
 
-2. Instalar Dependencias
-Asegúrate de tener Python y pip instalados, luego ejecuta:
-```bash
+# Instalar dependencias
 pip install -r requirements.txt
 ```
 
-3. Ejecutar el Sistema
-```bash
-python webcam.py
-```
-
-Comandos
--Presiona 'q': Detener la ejecución y guardar datos.  
--Ventana Principal: Muestra detecciones en tiempo real.  
-
 ---
 
-📂 Estructura del Proyecto
+## 🛠️ Uso Avanzado
 
-```
-procesamiento-imagenes-videos/
-│── 📜 webcam.py            # Código principal del sistema
-│── 📜 requirements.txt     # Dependencias del proyecto
-│── 📜 Times.csv            # Archivo con registros de actividad
-│── 📜 README.md            # Documentación del proyecto
-│── 📜 .gitignore           # Archivos a ignorar en Git
-```
+| Comando               | Descripción                          | Opciones                         |
+|-----------------------|--------------------------------------|----------------------------------|
+| `python webcam.py`    | Iniciar detección con cámara web     | `--min-area` (default: 1000)     |
+| `python video.py`     | Procesar archivo de video            | `--input video.mp4`              |
+| `python stats.py`     | Generar reportes estadísticos        | `--output reporte.pdf`           |
 
----
-
-🧠 Ejemplo de Implementación
-
+**Ejemplo de personalización:**
 ```python
-Detección de movimiento
-delta_frame = cv2.absdiff(first_frame, gray)
-_, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-for contour in contours:
-    if cv2.contourArea(contour) < 1000:
-        continue
-    (x, y, w, h) = cv2.boundingRect(contour)
-    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 3)
+# En webcam.py
+detector = MotionDetector(
+    min_area=1500,       # Área mínima para detección
+    blur_ksize=(21, 21), # Tamaño del kernel de desenfoque
+    threshold=25         # Umbral de detección
+)
 ```
 
 ---
 
-📊 Salida de Datos
+## 📂 Estructura del Proyecto
 
-El sistema genera un archivo **Times.csv** con:
--Start: Hora de inicio de movimiento.  
--End: Hora de fin de movimiento.  
-
-Ejemplo:
-| Start               | End                 |
-|---------------------|---------------------|
-| 2024-03-09 14:23:01 | 2024-03-09 14:23:05 |
-| 2024-03-09 14:25:10 | 2024-03-09 14:25:15 |
+| Archivo/Carpeta        | Descripción                                  |
+|------------------------|----------------------------------------------|
+| `webcam.py`            | Detección en tiempo real con cámara web      |
+| `video.py`             | Procesamiento de archivos de video           |
+| `Times.csv`            | Registro histórico de eventos de movimiento  |
+| `docs/`                | Documentación técnica y capturas             |
+| `config/`              | Parámetros personalizables                   |
 
 ---
 
-🛠️ Tecnologías Usadas
+## 🌐 Stack Tecnológico
 
--OpenCV: Procesamiento de imágenes y video.  
--Pandas: Manejo de datos temporales.  
--NumPy: Operaciones matriciales (tras bambalinas en OpenCV).  
-
----
-
-🌟 Mejoras Futuras
-
--Notificaciones en tiempo real: Integración con Telegram o email.  
--Soporte para múltiples cámaras: Monitoreo simultáneo.  
--Análisis estadístico: Gráficos de actividad.  
--Interfaz gráfica: Facilidad de uso para no técnicos.  
+| Tecnología       | Versión    | Uso Principal                 |
+|------------------|------------|-------------------------------|
+| Python           | 3.10+      | Lenguaje base                 |
+| OpenCV           | 4.8.0      | Procesamiento de video        |
+| Pandas           | 2.0.3      | Manejo de datos temporales    |
+| NumPy            | 1.24.3     | Operaciones matriciales       |
 
 ---
 
-🤝 Cómo Contribuir
+## 🔮 Roadmap
 
-1. Haz un fork del repositorio.  
-2. Crea una rama con tu feature: `git checkout -b feature/nueva-funcionalidad`.  
-3. Envía un Pull Request con una descripción clara de los cambios.  
+- [x] Detección básica con cámara web  
+- [x] Exportación de datos a CSV  
+- [ ] Integración con notificaciones push  
+- [ ] Soporte para múltiples cámaras  
+- [ ] Interfaz gráfica de usuario (GUI)  
+- [ ] Análisis avanzado de patrones  
 
 ---
