@@ -3,8 +3,6 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)](https://www.python.org/)
 [![Dependencias](https://img.shields.io/badge/Dependencias-Requests%20%7C%20BeautifulSoup%20%7C%20Pandas-orange)](requirements.txt)
 
-Herramienta automatizada para extracción y análisis de datos inmobiliarios en tiempo real.
-
 ## 📌 Descripción del Proyecto
 Sistema de scraping avanzado que recopila y organiza información clave de propiedades en venta, permitiendo:
 - Detección de tendencias de precios
