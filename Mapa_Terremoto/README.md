@@ -1,68 +1,99 @@
-🌍 Mapa Interactivo de Terremotos
+# 🌍 Mapa Interactivo de Terremotos en Tiempo Real
 
-Este proyecto utiliza datos en tiempo real de la API de USGS para visualizar los terremotos ocurridos en la última semana en un mapa interactivo con Folium.
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![Folium](https://img.shields.io/badge/Folium-0.15.1-77B829?logo=folium&logoColor=white)
+![USGS_API](https://img.shields.io/badge/USGS_API-2.5.1-important?logo=json&logoColor=white)
+![License](https://img.shields.io/badge/Licencia-MIT-green)
 
-📌 Características
+---
 
-✅ Obtención de datos en tiempo real desde la API de USGS.
+## 🌟 Características Principales
 
-✅ Almacenamiento de datos en un archivo CSV.
+✅ **Datos en Tiempo Real**  
+Actualización automática desde la API de USGS (magnitud mínima: 2.5+)
 
-✅ Visualización interactiva con Folium.
+✅ **Visualización Avanzada**  
+- Capas intercambiables entre marcadores estándar y círculos de calor  
+- Colorización dinámica por magnitud (escala de Richter)  
+- Popups informativos con detalles técnicos  
 
-✅ Dos tipos de marcadores: círculos con colores según magnitud y marcadores estándar.
+✅ **Almacenamiento Local**  
+Registro histórico en CSV con timestamp de actualización  
 
-✅ Popups con detalles de cada terremoto.
+✅ **Sistema Modular**  
+- Módulo independiente para obtención de datos  
+- Generación de mapas personalizable  
 
-✅ Control de capas para alternar entre visualizaciones.
+---
 
-🛠️ Instalación y Uso
+## 🚀 Instalación Rápida
 
-1️-Clonar el Repositorio
+### Requisitos Previos
+- Python 3.10+
+- Conexión a internet
 
-git clone https://github.com/ycmorejon/mapa-terremotos.git
-cd mapa-terremotos
+```bash
+# Clonar repositorio
+git clone https://github.com/YCmorejon/primeros-desarrollos.git
+cd primeros-desarrollos/Mapa_Terremoto
 
-2️-Instalar Dependencias
-
-Asegúrate de tener Python y pip instalados, luego ejecuta:
-
+# Instalar dependencias
 pip install -r requirements.txt
+```
 
-3️-Ejecutar el Script para Obtener Datos
+---
 
-python datos.py
+## 🛠️ Uso Avanzado
 
-4️-Generar el Mapa
+| Comando               | Descripción                          | Opciones                         |
+|-----------------------|--------------------------------------|----------------------------------|
+| `python datos.py`     | Obtener datos actualizados           | `--min-magnitude` (default: 2.5) |
+| `python mapa.py`      | Generar mapa interactivo             | `--style` (circle/marker)        |
+| `python main.py`      | Ejecutar flujo completo              | `--auto-update` (cada 15 min)    |
 
-python mapa.py
+**Ejemplo de personalización:**
+```python
+# En mapa.py
+m = folium.Map(
+    location=[20, -20],  # Coordenadas iniciales
+    zoom_start=3,        # Nivel de zoom
+    tiles="Stamen Terrain"  # Estilo de mapa
+)
+```
 
-5️-Abrir el Mapa en el Navegador
+---
 
-Abre Mapa_Base.html en tu navegador para visualizar los datos.
+## 📂 Estructura del Proyecto
 
-📂 Estructura del Proyecto
+| Archivo/Carpeta        | Descripción                                  |
+|------------------------|----------------------------------------------|
+| `datos.py`             | Obtención y procesamiento de datos de USGS  |
+| `mapa.py`              | Generación del mapa interactivo con Folium  |
+| `datos_terremotos.csv` | Dataset histórico con timestamps            |
+| `docs/`                | Documentación técnica y capturas            |
+| `config/`              | Parámetros personalizables                  |
 
-📂 mapa-terremotos
+---
 
-│── 📜 datos.py   # Obtiene datos de la API y los guarda en CSV
+## 🌐 Stack Tecnológico
 
-│── 📜 mapa.py    # Genera el mapa interactivo con Folium
+| Tecnología       | Versión    | Uso Principal                 |
+|------------------|------------|-------------------------------|
+| Python           | 3.10+      | Lenguaje base                 |
+| Folium           | 0.15.1     | Visualización geoespacial     |
+| Pandas           | 2.0.3      | Manipulación de datos         |
+| Requests         | 2.31.0     | Consumo de API USGS           |
+| Geopandas        | 0.13.2     | Procesamiento geoespacial     |
 
-│── 📜 datos_terremoto.csv  # Archivo con datos de los terremotos
+---
 
-│── 📜 README.md  # Documentación del proyecto
+## 🔮 Roadmap
 
-│── 📜 .gitignore  # Archivos a ignorar en Git
+- [x] Integración básica con USGS API  
+- [x] Sistema de capas intercambiables  
+- [ ] Filtros avanzados (magnitud/ubicación)  
+- [ ] Auto-actualización programada  
+- [ ] Panel de control estadístico  
+- [ ] Alertas por email/SMS  
 
-🌟 Mejoras Futuras
-
-Agregar filtros por magnitud o ubicación.
-
-Automatizar la actualización de datos cada cierto tiempo.
-
-Mejorar el diseño del mapa con estilos personalizados.
-
-🚀 ¡Contribuciones y sugerencias son bienvenidas!
-
-
+---
