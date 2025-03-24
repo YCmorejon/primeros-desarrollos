@@ -66,8 +66,3 @@ scraper.save_data("propiedades.csv")
 4. Haz push de los cambios (`git push origin feature/nueva-funcionalidad`)
 5. Abre un Pull Request
 
-## 🎓 Reconocimientos
-- [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Parsing HTML/XML
-- [Pandas](https://pandas.pydata.org/) - Manipulación de datos
-- [Requests](https://requests.readthedocs.io/) - Cliente HTTP
-```
