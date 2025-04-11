@@ -1,1 +1,3 @@
-
+OpenCV
+Pandas	
+NumPy
